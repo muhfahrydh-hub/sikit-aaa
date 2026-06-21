@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Book: Perilaku atau Sifat Buruk yang Dilarang dalam Islam</title>
+    <style>
+        :root {
+            --primary-color: #336600;
+            --primary-light: #669900;
+            --bg-dark: #1b3300;
+            --text-dark: #2d3748;
+            --text-light: #ffffff;
+            --bg-light: #f3f7f0;
+            --gold-accent: #c5a059;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --shadow-premium: 0 20px 40px rgba(27, 51, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02);
+            --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: radial-gradient(circle at top right, #f9fbf7, #eef4e8);
+            color: var(--text-dark);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Ultra HD Premium Navigation Bar */
+        header {
+            background: backdrop-filter: blur(20px);
+            background: rgba(27, 51, 0, 0.96);
+            border-bottom: 2px solid var(--gold-accent);
+            color: var(--text-light);
+            padding: 0 32px;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1000;
+            box-shadow: var(--shadow-premium);
+        }
+
+        .logo-area {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-area h1 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            background: linear-gradient(135deg, #ffffff 0%, var(--gold-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-area span {
+            font-size: 0.75rem;
+            opacity: 0.9;
+            color: var(--primary-light);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 2px;
+            font-weight: 600;
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 26px;
+            height: 18px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 100%;
+            height: 2.5px;
+            background-color: var(--text-light);
+            border-radius: 2px;
+            transition: var(--transition-smooth);
+        }
+
+        /* Navigation Menu Core */
+        nav {
+            height: 100%;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            height: 100%;
+            align-items: center;
+        }
+
+        nav li {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        nav a.nav-item-btn {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0 24px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        nav a.nav-item-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background-color: var(--gold-accent);
+            transition: var(--transition-smooth);
+            transform: translateX(-50%);
+        }
+
+        nav a.nav-item-btn:hover::after, nav li.active-menu a.nav-item-btn::after {
+            width: 80%;
+        }
+
+        nav a.nav-item-btn:hover {
+            color: var(--gold-accent);
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        /* Dropdown Ultra HD */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--card-bg);
+            min-width: 260px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            top: 100%;
+            left: 0;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: var(--transition-smooth);
+            border-top: 4px solid var(--gold-accent);
+            padding: 10px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        nav li:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            color: var(--text-dark);
+            padding: 14px 24px;
+            text-decoration: none;
+            font-size: 0.92rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f0f6e8;
+            color: var(--primary-color);
+            padding-left: 30px;
+        }
+
+        .has-sub {
+            position: relative;
+        }
+
+        .sub-dropdown {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: -10px;
+            background-color: var(--card-bg);
+            min-width: 280px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+            padding: 10px 0;
+        }
+
+        .has-sub:hover .sub-dropdown {
+            display: block;
+            animation: slideInH 0.3s forwards;
+        }
+
+        /* Container & Premium Scroll Workspace */
+        .main-content-area {
+            flex: 1;
+            width: 100%;
+            overflow-y: auto;
+            padding: 40px 20px;
+            scroll-behavior: smooth;
+        }
+
+        .content-container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        /* Master Animation Wrapper */
+        .book-page {
+            display: none;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition-smooth);
+            background: var(--card-bg);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-premium);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+
+        .book-page.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            animation: premiumFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* DEDICATED SEPARATE COVER STYLE */
+        .premium-cover-hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 65vh;
+            padding: 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #f4f8f0 100%);
+            border-radius: 16px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-cover-hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(102,153,0,0.04) 0%, transparent 60%);
+            top: -50%;
+            left: -50%;
+            animation: rotateBg 20s linear infinite;
+        }
+
+        .cover-badge {
+            background: linear-gradient(135deg, var(--primary-color), var(--bg-dark));
+            color: var(--gold-accent);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(51,102,0,0.15);
+        }
+
+        .cover-title-hd {
+            color: var(--bg-dark);
+            font-size: 2.6rem;
+            font-weight: 900;
+            line-height: 1.3;
+            letter-spacing: -0.5px;
+            max-width: 800px;
+            margin-bottom: 15px;
+        }
+
+        .cover-subtitle-hd {
+            color: var(--gold-accent);
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .cover-meta-box {
+            display: flex;
+            gap: 40px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            padding-top: 30px;
+            width: 100%;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .meta-item h5 {
+            font-size: 0.75rem;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .meta-item p {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--bg-dark);
+        }
+
+        /* Typography & Content UI */
+        .section-header {
+            color: var(--bg-dark);
+            font-size: 1.75rem;
+            font-weight: 800;
+            border-bottom: 3px solid var(--primary-light);
+            padding-bottom: 12px;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        .preface-text {
+            text-align: justify;
+            line-height: 1.9;
+            font-size: 1.1rem;
+            color: #3d4a5d;
+            margin-bottom: 20px;
+        }
+
+        /* Ultra HD Hadith Block */
+        .hadith-block {
+            background: linear-gradient(135deg, #ffffff 0%, #f9fbf7 100%);
+            border-left: 5px solid var(--gold-accent);
+            padding: 35px;
+            margin: 35px 0;
+            border-radius: 4px 16px 16px 4px;
+            box-shadow: 0 10px 30px rgba(51,102,0,0.03);
+            border: 1px solid rgba(51,102,0,0.05);
+            border-left-width: 5px;
+        }
+
+        .hadith-arabic {
+            font-family: "Amiri", "Traditional Arabic", Georgia, serif;
+            font-size: 2.1rem;
+            line-height: 2.5;
+            text-align: right;
+            direction: rtl;
+            margin-bottom: 25px;
+            color: #111111;
+            font-weight: 500;
+        }
+
+        .hadith-translation {
+            font-size: 1.08rem;
+            line-height: 1.85;
+            color: #4a5568;
+            text-align: justify;
+            border-top: 1px dashed #e2e8f0;
+            padding-top: 20px;
+        }
+
+        /* Profile Layout Cards */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .profile-card {
+            background: linear-gradient(180deg, #ffffff 0%, #fdfefe 100%);
+            border: 1px solid #eef4e8;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+            transition: var(--transition-smooth);
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(51,102,0,0.06);
+            border-color: var(--primary-light);
+        }
+
+        .profile-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.25rem;
+            border-bottom: 2px solid #f0f4ec;
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .profile-card p {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Animations Definition */
+        @keyframes premiumFadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.98);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes slideInH {
+            0% { opacity: 0; transform: translateX(15px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes rotateBg {
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Layout Viewports */
+        @media (max-width: 992px) {
+            .menu-toggle { display: flex; }
+            nav {
+                display: none;
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 75px);
+                background-color: #ffffff;
+                overflow-y: auto;
+                z-index: 999;
+            }
+            nav.active { display: block; }
+            nav ul { flex-direction: column; height: auto; padding: 20px 0; }
+            nav li { width: 100%; height: auto; flex-direction: column; align-items: flex-start; }
+            nav a.nav-item-btn {
+                color: var(--text-dark);
+                width: 100%;
+                padding: 18px 32px;
+                height: auto;
+                border-bottom: 1px solid #f0f0f0;
+                justify-content: space-between;
+            }
+            nav a.nav-item-btn::after { display: none; }
+            .dropdown-content {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                border-radius: 0;
+                opacity: 1;
+                transform: none;
+                display: none;
+                background-color: #fafdfa;
+            }
+            nav li.active-mobile .dropdown-content { display: block; }
+            .has-sub .sub-dropdown {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                border-radius: 0;
+                display: none;
+                background-color: #f5faf0;
+            }
+            .has-sub.active-sub .sub-dropdown { display: block; }
+            .dropdown-content a { padding-left: 44px; }
+            .sub-dropdown a { padding-left: 60px; }
+            .book-page { padding: 30px 20px; border-radius: 12px; }
+            .cover-title-hd { font-size: 1.8rem; }
+            .cover-meta-box { flex-direction: column; gap: 15px; }
+            .profile-grid { grid-template-columns: 1fr; }
+        }
+
+        .iframe-pdf {
+            width: 100%;
+            height: 78vh;
+            border: none;
+            border-radius: 12px;
+            box-shadow: var(--shadow-premium);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <h1>Portal Studi Digital</h1>
+            <span>E-Book & Website Review</span>
+        </div>
+        
+        <button class="menu-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="nav-menu">
+            <ul>
+                <!-- Menu Cover Terpisah Sesuai Instruksi -->
+                <li><a href="#" onclick="showPage('cover')" class="nav-item-btn">Cover E-Book</a></li>
+                <li><a href="#" onclick="showPage('home')" class="nav-item-btn">Kata Pengantar</a></li>
+                
+                <!-- Kelompok E-Book Utama -->
+                <li>
+                    <a href="#" class="nav-item-btn">Materi Bab ▾</a>
+                    <div class="dropdown-content">
+                        <div class="has-sub">
+                            <a href="#">Diri Sendiri <span>▸</span></a>
+                            <div class="sub-dropdown">
+                                <a href="#" onclick="showPage('bab1_putus_asa')">Putus Asa & Berprasangka Buruk</a>
+                                <a href="#" onclick="showPage('bab1_boros')">Perilaku Boros & Berlebihan</a>
+                                <a href="#" onclick="showPage('bab1_kecanduan')">Kecanduan & Perilaku Destruktif</a>
+                            </div>
+                        </div>
+                        <div class="has-sub">
+                            <a href="#">Hubungan Sosial <span>▸</span></a>
+                            <div class="sub-dropdown">
+                                <a href="#" onclick="showPage('bab2_sombong')">Sikap Sombong & Angkuh</a>
+                                <a href="#" onclick="showPage('bab2_iri_hati')">Perilaku Iri Hati & Dengki</a>
+                                <a href="#" onclick="showPage('bab2_ghibah')">Ghibah, Fitnah, & Namimah</a>
+                                <a href="#" onclick="showPage('bab2_dzalim')">Sikap Dzalim & Penindasan</a>
+                            </div>
+                        </div>
+                        <div class="has-sub">
+                            <a href="#">Syari'at & Moral <span>▸</span></a>
+                            <div class="sub-dropdown">
+                                <a href="#" onclick="showPage('bab3_riba')">Riba & Jual Beli Curang</a>
+                                <a href="#" onclick="showPage('bab3_zina')">Perbuatan Zina & Homoseksualitas</a>
+                                <a href="#" onclick="showPage('bab3_berbohong')">Berbohong & Ingkar Janji</a>
+                                <a href="#" onclick="showPage('bab3_khianat')">Khianat & Tidak Amanah</a>
+                            </div>
+                        </div>
+                        <div class="has-sub">
+                            <a href="#">Iman & Aqidah <span>▸</span></a>
+                            <div class="sub-dropdown">
+                                <a href="#" onclick="showPage('bab4_syirik')">Syirik & Kesyirikan</a>
+                                <a href="#" onclick="showPage('bab4_riya')">Riya & Sum'ah</a>
+                                <a href="#" onclick="showPage('bab4_kufur')">Kufur Nikmat & Mengeluh</a>
+                                <a href="#" onclick="showPage('bab4_murtad')">Murtad & Keluar dari Islam</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Kelompok Review Website -->
+                <li>
+                    <a href="#" class="nav-item-btn">Review Website ▾</a>
+                    <div class="dropdown-content">
+                        <a href="https://drive.google.com/file/d/1drVswxtJH6Vm44_nQVX3CQpK0_DHzRaF/view?usp=drivesdk" onclick="showPdf('YOUR_LINK_1', 'Part 1')">Review Website Part 1</a>
+                        <a href="https://drive.google.com/file/d/1Mtv91rLPNnrZ1bW-QfMcey3L8XUD5RBs/view?usp=drivesdk" onclick="showPdf('YOUR_LINK_2', 'Part 2')">Review Website Part 2</a>
+                        <a href="https://drive.google.com/file/d/1XWqfcKp_uQwg27XnkhgHY4_B4JCoO8kx/view?usp=drivesdk" onclick="showPdf('YOUR_LINK_3', 'Part 3')">Review Website Part 3</a>
+                        <a href="https://drive.google.com/file/d/13nqNJbI7nGQQzmyd6mbWLMk5ErRJjOSI/view?usp=drivesdk" onclick="showPdf('YOUR_LINK_4', 'Part 4')">Review Website Part 4</a>
+                        <a href="https://drive.google.com/file/d/1tfw4pFkJupoRX4VzSSCZRzUSbjd6XYQ0/view?usp=drivesdk" onclick="showPdf('YOUR_LINK_5', 'Part 5')">Review Website Part 5</a>
+                        <a href="https://drive.google.com/file/d/1Pyi8EwGOaDra7H1KjJajGWopQ1Ujdaeh/view?usp=drivesdk" onclick="showPdf('YOUR_LINK_6', 'Part 6')">Review Website Part 6</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-content-area">
+        <div class="content-container">
+            
+            <!-- BAB MANDIRI: COVER E-BOOK (PREMIUM ULTRA HD DESIGN) -->
+            <div id="page-cover" class="book-page active">
+                <div class="premium-cover-hero">
+                    <div class="cover-badge">Digital E-Book Study</div>
+                    <h1 class="cover-title-hd">PERILAKU ATAU SIFAT BURUK YANG DILARANG DALAM ISLAM</h1>
+                    <h2 class="cover-subtitle-hd">BERDASARKAN QURAN & HADITS</h2>
+                    
+                    <div class="cover-meta-box">
+                        <div class="meta-item">
+                            <h5>Penulis Utama</h5>
+                            <p>Muhammad Yusron Kurniawan</p>
+                        </div>
+                        <div class="meta-item">
+                            <h5>Editor / Web Developer</h5>
+                            <p>Muhammad Fahry Dharmansyah</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE: KATA PENGANTAR -->
+            <div id="page-home" class="book-page">
+                <h3 class="section-header">Kata Pengantar</h3>
+                <p class="preface-text">Segala puji bagi Allah SWT yang telah memberikan nikmat iman dan Islam, serta kesempatan untuk terus belajar dan memperbaiki diri. Shalawat dan salam semoga senantiasa tercurah kepada Nabi Muhammad SAW, suri tauladan umat manusia dalam segala aspek kehidupan.</p>
+                <p class="preface-text">Islam adalah agama yang sangat menekankan akhlak mulia. Dalam ajarannya, berbagai perilaku buruk yang merusak hubungan antar manusia maupun merusak diri sendiri, dengan tegas dilarang. Sifat-sifat seperti berbohong, menipu, hasad (iri dengki), takabur (sombong), dan khianat merupakan contoh dari perilaku tercela yang sangat mengecam dalam Islam. Tidak hanya berdampak buruk secara sosial, perilaku tersebut juga dapat menghambat seseorang dari mendapat ridho Allah SWT.</p>
+                <p class="preface-text">Tugas ini disusun untuk memenuhi salah satu penilaian dalam mata kuliah studi hadis digital, dengan harapan dapat memberikan pemahaman mengenai pentingnya perilaku atau sifat buruk yang dilarang dalam islam untuk kita jauhi dan tak patut untuk kitak lakukan. Penulis menyadari bahwa tugas ini masih jauh dari sempurna. Oleh karena itu, kritik dan saran yang sangat penulis harapkan demi perbaikan di tugas yang mendatang.</p>
+                <p class="preface-text">Semoga tugas ini bermanfaat dan bisa menjadi pengingat akan pentingnya menjauhi perilaku atau sifat buruk yang dilarang dalam islam.</p>
+                <div style="text-align: right; margin-top: 40px; border-top: 1px dashed #e2e8f0; padding-top: 20px;">
+                    <p style="font-size: 0.95rem; color: #718096;">Terimakasih</p>
+                    <p style="font-size: 1.1rem; font-weight: 700; color: var(--bg-dark); margin-top: 5px;">Serang, 24 April 2025</p>
+                    <p style="color: var(--primary-color); font-weight: 600;">Muhammad yushron Kurniawan</p>
+                </div>
+            </div>
+
+            <!-- PAGE: PUTUS ASA -->
+            <div id="page-bab1_putus_asa" class="book-page">
+                <h2 class="section-header">Perilaku Merugikan Diri Sendiri - Putus Asa dan Berprasangka Buruk</h2>
+                <div class="hadith-block">
+                    <div class="hadith-arabic">صحيح البخاري ٣٣٨٩: حَدَّثَنَا يَحْيَى بْنُ بُكَيْرٍ حَدَّثَنَا اللَّيْثُ عَنْ عُقَيْلٍ عَنْ ABْنِ شِهَابٍ قَالَ أَخْبَرَنِي عُرْوَةُ أَنَّهُ سَأَلَ عَائِشَةَ رَضِيَ اللَّهُ عَنْهَا زَوْجَ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ أَرَأَيْتِ قَوْلَهُ { حَتَّى إِذَا اسْتَيْأَسَ الرُّسُلُ وَظَنُّوا أَنَّهُمْ قَدْ كُذِّبُوا } أَوْ { كُذِبُوا } قَالَتْ بَلْ كَذَّبَهُمْ قَوْمُهُمْ فَقُلْتُ وَاللَّهِ لَقَدْ اسْتَيْقَنُوا أَنَّ قَوْمَهُمْ كَذَّبُوهُمْ وَمَا هُوَ بِالظَّنِّ فَقَالَتْ يَا عُرَيَّةُ لَقَدْ اسْتَيْقَنُوا بِذَلِكَ قُلْتُ فَلَعَلَّهَا أَوْ { كُذِبُوا } قَالَتْ مَعَاذَ اللَّهِ لَمْ تَكُنِ الرُّسُلُ تَظُنُّ ذَلِكَ بِرَبِّهَا وَأَمَّا هَذِهِ الْآيَةُ قَالَتْ هُمْ أَتْبَاعُ الرُّسُلِ الَّذِينَ آمَنُوا بِرَبِّهِم|ْ وَصَدَّقُوهُمْ وَطَالَ عَلَيْهِمْ الْبَلَاءُ وَاسْتَأْخَرَ عَنْهُمْ النَّصْرُ حَتَّى إِذَا اسْتَيْأَسَتْ مِمَّنْ كَذَّبَهُمْ مِنْ قَوْمِهِمْ وَظَنُّوا أَنَّ أَتْبَاعَهُمْ كَذَّبُوهُمْ جَاءَهُمْ نَصْرُ اللَّهِ قَالَ أَبُو عَبْد اللَّهِ { اسْتَيْأَسُوا } اسْتَفْعَلُوا مِنْ يَئِسْتُ { مِنْهُ } مِنْ يُوسُفَ { لَا تَيْأَسُوا مِنْ رَوْحِ اللَّهِ } مَعْنَاهُ الرَّجَا ءُ</div>
+                    <div class="hadith-translation"><strong>Artinya :</strong> “Shahih Bukhari 3389: Telah bercerita kepada kami [Yahya bin Bukair] telah bercerita kepada kami [Al Laits] dari [‘Uqail] dari [Ibnu Shihab] berkata telah mengabarkan kepadaku [‘Urwah] bahwa Dia pernah bertanya kepada ‘Aisyah radliyallahu ‘anha, istri Nabi shallallahu ‘alaihi wa sallam: “Bagaimana pendapat kamu tentang firman Allah (Sehingga apabila para Rasul itu tidak mempunyai harapan lagi -tentang keimanan kaum mereka- dan mereka berprasangka bahwa mereka telah dituduh berdusta -kudzdzibuu, huruf dzal bertasydid-) atau (didustakan -kudzibuu, dzal tidak bertasydid-) (QS. Yusuf: 110). ‘Aisyah berkata: “Bahkan yang benar adalah para Rasul benar-benar telah didustakan oleh kaum mereka”. Aku riwayat: “Demi Allah, sungguh mereka telah yakin bahwa kaum mereka menuduh mereka berdusta, lalu apa maksud berprasangka dalam ayat itu?” ‘Aisyah radliallahu ‘anha berkata: “Wahai ‘Urwah, sungguh para Rasul telah yakin mereka akan didustakan.” Aku riwayat: “Semoga saja begitu. Atau mereka hanya berprasangka bahwa mereka telah didustakan?” ‘Aisyah berkata: “Allah Maha Melindungi. Sungguh para Rasul tidak berprasangka kepada Rabb mereka. Ayat ini, katanya: “Adalah berkaitan dengan pengikut mereka yang ditimpa ujian dalam masa yang cukup lama, sedang pertolongan belum juga datang, sehingga riwayat diantara mereka berputus asa terhadap orang yang mendustakan mereka dan jangan-jangan pengikutnya malah akan mendustakan kenabiannya, barulah datang pertolongan Allah.” Abu ‘Abdullah (Al Bukhariy) berkata: Kata istay’asuu mengikuti pola kalimat istaf’aluu yang berasal dari kata yaistu. Dalam Surah Yusuf laa tay’asuu mir rauhillah (janganlah kalian berputus asa dari ridho Allah) maksudnya adalah agar selalu mengedepankan raja’ (harapan).”</div>
+                </div>
+            </div>
+
+            <!-- PAGE: BOROS -->
+            <div id="page-bab1_boros" class="book-page">
+                <h2 class="section-header">Perilaku Merugikan Diri Sendiri - Perilaku Boros & Berlebihan</h2>
+                <div class="hadith-block">
+                    <div class="hadith-arabic">سنن النسائي ٣٦٦٨: أَخْبَرَنَا إِسْمَعِيلُ بْنُ مَسْعُودٍ قَالَ حَدَّثَنَا خَالِدٌ عَنْ حُسَيْنٍ عَنْ عَمْرِو بْنِ شُعَيْبٍ عَنْ أَبِيهِ عَنْ جَدِّهِ أَنَّ رَجُلًا أَتَى النَّبِيَّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ فَقَالَ إِنِّي فَقِيرٌ لَيْسَ لِي شَيْءٌ وَلِي يَتِيمٌ قَالَ كُلْ مِنْ مَالِ يَتِيمِكَ غَيْرَ مُسْرِفٍ وَلَا مُبَاذِرٍ وَلَا مُتَأَثِّل</div>
+                    <div class="hadith-translation"><strong>Artinya :</strong> “Sunan Nasa’i 3668: Telah mengabarkan kepada kami [Isma’il bin Mas’ud] berkata: telah menceritakan kepada kami [Khalid] dari [Husain] dari [‘Amru bin Syu’aib] dari [ayahnya] dari [kakeknya], bahwa seseorang datang kepada Nabi shallallahu ‘alaihi wa sallam kemudian berkata: “Sesungguhnya aku orang yang fakir, aku tidak memiliki apa-apa namun aku mempunyai anak yatim?” Beliau bersabda: “Makanlah dari harta anak yatimmu tanpa berlebih-lebihan, tidak boros dan tidak menjadikannya sebagai pokok harta.”</div>
+                </div>
+            </div>
+
+            <!-- PAGE: KECANDUAN -->
+            <div id="page-bab1_kecanduan" class="book-page">
+                <h2 class="section-header">Perilaku Merugikan Diri Sendiri - Kecanduan & Perilaku Destruktif</h2>
+                <div class="hadith-block">
+                    <div class="hadith-arabic">سنن الترمذي ١٨٦١: حَدَّثَنَا أَبُو زَكَرِيَّا يَحْيَى بْنُ دُرُسْتَ الْبَصْرِيُّ حَدَّثَنَا حَمَّادُ بْنُ زَيْدٍ عَنْ أَيُّوبَ عَنْ نَافِعٍ عَنْ ABBI عَنْ اBْنِ عُمَرَ قَالَ قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ كُلُّ مُسْكِرٍ خَمْرٌ وَكُلُّ مُسْكِرٍ حَرَامٌ وَمَنْ شَرِبَ الْخَمْرَ فِي الدُّنْيَا فَمَاتَ وَهُوَ يُدْمِنُهَا لَمْ يَشْرَبْهَا فِي الْآخِرَةِ قَالَ وَفِي الْبَاب عَنْ أَبِي هُرَيْرَةَ وَأَبِي سَعِيدٍ وَعَبْدِ اللَّهِ بْنِ عَمْرٍو وَابْنِ عَبَّاسٍ وَعُبَادَةَ وَأَبِي مَالِكٍ الْأَشْعَرِيِّ قَالَ أَبُو عِيسَى حَدِيثُ ابْنِ عُمَرَ حَدِيثٌ حَسَنٌ صَحِيحٌ وَقَدْ رُوِيَ مِنْ غَيْرِ وَجْهٍ عَنْ نَافِعٍ عَنْ ابْنِ عُمَرَ عَنْ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ وَرَوَاهُ مَالِكُ بْنُ أَنَسٍ عَنْ نَافِعٍ عَنْ ابْنِ عُمَرَ مَوْقُوفًا فَلَمْ يَرْفَعْه</div>
+                    <div class="hadith-translation"><strong>Artinya :</strong> “Sunan Tirmidzi 1784: Telah menceritakan kepada kami [Abu Zakariya Yahya bin Duursta Al Bashari], telah menceritakan kepada kami [Hammad bin Zaid] dari [Ayub] dari [Nafi’] dari [Ibnu Umar] ia berkata: Rasulullah shallallahu ‘alaihi wa sallam bersabda: “Setiap yang memabukkan adalah khamer, and setiap yang memabukkan itu adalah haram. Siapa yang meminum khamer lalu ia meninggal dalam keadaan kecanduan khamer, maka ia tidak akan meminumnya di akhirat.” Hadits semakna juga diriwayatkan dari Abu Hurairah, Abu Sa’id, Abdullah bin Amr, Ibnu Abbas, Ubadah dan Abu Malik Al Asy’ari. Abu Isa berkata: Haditsnya Ibnu Umar adalah hasan shahih. Dan telah diriwayatkan pula oleh lebih dari satu dari Nafi’ dari Ibnu Umar, dari Nabi shallallahu ‘alaihi wa sallam. Dan telah diriwayatkan oleh Malik bin Anas dari Nafi’, dari Ibnu Umar secara Mauquf, dan ia tidak memarfu’kannya.”</div>
+                </div>
+            </div>
+
+            <!-- PAGE: SOMBONG -->
+            <div id="page-bab2_sombong" class="book-page">
+                <h2 class="section-header">Perilaku Merusak Hubungan Sosial - Sikap Sombong & Angkuh</h2>
+                <div class="hadith-block">
+                    <div class="hadith-arabic">المستدرak ٦٩: حَدَّثَنَا أَبُو الْعَبَّاسِ مُحَمَّدُ بْنُ يَعْقُوبَ، ثنا جَعْفَرُ بْنُ مُحَمَّ(دٍ) بْنِ شَاكِرٍ، ثنا عَفَّانُ، وَحَدَّثَنَا أَبُو بَكْرِ بْنُ إِسْحَاقَ الْفَقِيهُ، أَنَا مُحَمَّدُ بْنُ غَالِبٍ، وَمُحَمَّدُ بْن... مَحْمُودٍ الْبُنَانِيُّ، قَالَا: ثنا عَبْدُ الْعَزِيزِ بْنُ مُسْلِمٍ، عَنِ الْأَعْمَشِ، عَنْ حَبِيبِ بْنِ ثَابِتٍ، عَنْ أَبِي يَحْيَى بْنِ جَعْدَةَ، عَنْ عَبْدِ اللَّهِ بْنِ مَسْعُودٍ رَضِيَ اللَّهُ عَنْهُ، عَنِ النَّبِيِّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ أَنَّهُ قَالَ: «لَا يَدْخُلُ الْجَنَّةَ مَنْ كَانَ فِي قَلْبِهِ حَبَّةٌ مِنْ كِبْرٍ» فَقَالَ رَجُلٌ: يَا رَسُولَ اللَّهِ، إِنَّهُ لَيُعْجِبُنِي أَنْ يَكُونَ ثَوْبِي جَدِيدًا، وَرَأْسِي دَهِينًا، وَشِرَاكُ نَعْلِي جَدِيدًا، قَالَ: وَذَكَرَ أَشْيَAAَ حَتَّى ذَكَرَ عِلَاقَةَ سَوْطِهِ، فَقَالَ: «ذَاكَ جَمَالٌ، وَاللَّهُ جَمِيلٌ يُحِبُّ الْجَمَالَ، وَلَكِنَّ الْكِبْرَ مَنْ بَطِرَ الْحَقَّ وَازْدَرَى النَّاسَ» . «هَذَا حَدِيثٌ صَحِيحُ الْإِسْنَادِ وَلَمْ يُخَرِّجَاهُ، وَقَدِ احْتَجَّا جَمِيعًا بِرُوَاتِهِ وَلَهُ شَاهِدٌ آخَرُ عَلَى شَرْطِ مُسْلِم</div>
+                    <div class="hadith-translation"><strong>Artinya :</strong> “Al Mustadrak 69: Abu Al Abbas Muhammad bin Ya’qub menceritakan kepada kami, Ja’far bin Muhammad bin Syakir menceritakan kepada kami, Affan menceritakan kepada kami. Abu Bakar bin Ishaq Al Faqih menceritakan kepada kami, Muhammad bin Ghalib dan dan Muhammad bin Mahmud Al Banani mengabarkan kepada kami, keduanya berkata: Abdul Aziz bin Muslim menceritakan kepada kami dari Al A’masy, dari Hubaib bin Tsabit, dari Abi Yahya bin Ja’dah, dari Abdullah bin Mas’ud , dari Nabi shallallahu ‘alaihi wa sallam, beliau bersabda, “Tidak akan masuk surga orang yang dalam hatinya terdapat kesombongan (sebesar) biji sawi.” Seorang sahabat lalu berkata, “Wahai Rasulullah, aku orang yang suka memakai pakaian baru, minyak rambut di kepala, dan (suka memakai) tali sandal yang baru.” Dia lalu menyebutkan berbagai hal, sampai menyebutkan tentang penitinya. Mendengar itu Nabi shallallahu ‘alaihi wa sallam lalu bersabda, “Itu adalah keindahan, dan Allah menyukai keindahan. Akan tetapi (yang dimaksud) sombong adalah menolak kebenaran dan menghina manusia.” Sanad hadits ini shahih. Al Bukhari dan Muslim tidak meriwayatkannya, dan keduanya sama-sama berhujjah dengan para periwayatnya. Hadits ini juga memiliki syahid lain yang sesuai syarat Muslim:”</div>
+                </div>
+            </div>
+
+            <!-- PAGE: IRI HATI -->
+            <div id="page-bab2_iri_hati" class="book-page">
+                <h2 class="section-header">Perilaku Merusak Hubungan Sosial - Perilaku Iri Hati & Dengki</h2>
+                <div class="hadith-block">
+                    <div class="hadith-arabic">مسند أحمد ٥ :حَدَّثَنَا مُحَمَّدُ بْنُ جَعْفَرٍ قَالَ حَدَّثَنَا شُعْبَةُ عَنْ يَزِIDَ بْنِ خُمَيْرٍ عَنْ سُلَيْمِ بْنِ عَامِرٍ عَنْ أَوْسَطَ قَالَ خَطَبَنَا أَبُو بَكْرٍ رَضِيَ اللَّهُ عَنْهُ فَقَالَ قَامَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ مَقَامِي هَذَا عَامَ الْأَوَّلِ وَبَكَى أَبُو بَكْرٍ فَقَالَ أَبُو بَكْرٍ سَلُوا اللَّهَ الْمُعَافَاةَ أَوْ قَالَ الْعَافِيَةَ فَلَمْ يُؤْتَ أَحَدٌ قَطُّ بَعْدَ الْيَقِينِ أَفْضَلَ مِنْ الْعَافِيَةِ أَوْ الْمُعَافَاةِ عَلَيْكُمْ بِالصِّدْقِ فَإِنَّهُ مَعَ الْبِرِّ وَهُمَا فِي الْجَنَّةِ وَإِيَّاكُمْ وَالْكَذِبَ فَإِنَّهُ مَعَ الْفُجُورِ وَهُمَا فِي النَّارِ وَلَا تَحَاسَدُوا وَلَا تَبَاغَضُوا وَلَا تَقَاطَعُوا وَلَا تَدَابَرُوا وَكُونُوا إِخْوَانًا كَمَا أَمَرَكُمْ اللَّهُ تَعَالَى</div>
+                    <div class="hadith-translation"><strong>Artinya :</strong> “musnad ahmad 5: Telah menceritakan kepada kami [Muhammad Bin Ja’far] dia berkata: Telah menceritakan kepada kami [Syu’bah] dari [Yazid Bin Khumair] dari [Sulaim Bin ‘Amir] dari [Ausath], dia berkata: [Abu Bakar] berkhutbah kepada kami dan berkata: Rasulullah shallallahu ‘alaihi wa sallam berdiri ditempatku ini pada tahun pertama. Lalu Abu Bakar menangis, kemudian berkata: mohonlah kepada Allah Al mu’aafaat (ampunan) atau ia berkata Al ‘Aafiyah (keselamatan), karena tidaklah seseorang diberi sesuatu yang lebih utama dari Al ‘Aafiyah atau Al mu’aafaat setelah keyakinan, berlaku jujurlah kalian karena kejujuran sejalan kebaikan dan keduanya berada di surga, dan jauhilah dusta karena dusta sejalan kejahatan dan keduanya berada di neraka, dan janganlah kalian saling dengki, bermusuhan, dan jangan pula saling memutus tali silaturrahim dan saling berpaling, akan tetapi jadilah kalian bersaudara sebagaimana yang Allah Ta’ala perintahkan.”</div>
+                </div>
+            </div>
+
+            <!-- PAGE: GHIBAH -->
+            <div id="page-bab2_ghibah" class="book-page">
+                <h2 class="section-header">Perilaku Merusak Hubungan Sosial - Ghibah, Fitnah, & Namimah</h2>
+                <div class="hadith-block">
+                    <div class="hadith-arabic">سنن الترمذي ١٩٣٤ :حَدَّثَنَا قُتَيْبَةُ حَدَّثَنَا عَبْدُ الْعَزِيزِ بْنُ مُحَمَّدٍ عَنْ الْعَلَاءِ بْنِ عَبْدِ الرَّحْمَنِ عَنْ أَبِيهِ عَنْ أَبِي هُرَيْرَةَ قَالَ قِيلَ يَا رَسُولَ اللَّهِ مَا الْغِيبَةُ قَالَ ذِكْرُكَ أَخَاكَ بِمَا يَكْرَهُ قَالَ أَرَأَيْتَ إِنْ كَانَ فِيهِ مَا أَقُولُ قَالَ إِنْ كَانَ فِيهِ مَا تَقُولُ فَقَدْ اغْتَبْتَهُ وَإِنْ لَمْ يَكُنْ فِيهِ مَا تَقُولُ فَقَدْ بَهَتَّهُ قَالَ وَفِي الْبَاب عَنْ أَبِي بَرْزَةَ وَابْنِ عُمَرَ وَعَبْدِ اللَّهِ بْنِ عَمْرٍو قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ حَسَنٌ صَحِيحٌ</div>
+                    <div class="hadith-translation"><strong>Artinya :</strong> “Sunan Tirmidzi 1934: Telah menceritakan kepada kami [Qutaibah], telah menceritakan kepada kami [Abdul Aziz bin Muhammad] dari [Al Ala` bin Abdurrahman] dari [bapaknya] dari [Abu Hurairah] ia berkata: Ditanyakan kepada Rasulullah, “Wahai Rasulullah, apakah ghibah itu?” beliau menjawab: “Kamu menyebutkan tentang temanmu dengan sesuatu yang ia benci.” Ia bertanya lagi, “Bagaimana sekiranya apa yang kukatakan memang benar?” Beliau menjawab: “Jika memang apa yang kamu riwayat itu benar, maka sungguh kamu telah menggibahnya, namun jika apa yang kamu riwayat itu tidak benar, maka sungguh kamu telah berdusta.” Hadits semakna juga diriwayatkan dari Abu Bazrah, Ibnu Umar dan Abdullah bin Amr. Abu Isa berkata: Ini adalah hadits hasan shahih.”</div>
+                </div>
+            </div>
+
+            <!-- PAGE: DZALIM -->
+            <div id="page-bab2_dzalim" class="book-page">
+                <h2 class="section-header">Perilaku Merusak Hubungan Sosial - Sikap Dzalim & Penindasan</h2>
+                <div class="hadith-block">
+                    <div class="hadith-arabic">سنن النسائي ٥٤٤٩: أَخْبَرَنَا عَلِيُّ بْنُ الْمُنْذِرِ عَنْ IPنِ فُضَيْلٍ قَالَ حَدَّثَنَا مُحَمَّدُ بْنُ إِسْحَقَ عَنْ الْمِنْهَالِ بْنِ عَمْرٍو عَنْ أَنَسِ بْنِ مَالِكٍ قَالَ كَانَ لِرَسُولِ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ دَعَوَاتٌ لَا يَدَعُهُنَّ كَانَ يَقُولُ اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ الْهَمِّ وَالْحَزَنِ وَالْعَجْزِ وَالْكَسَلِ وَالْبُخْلِ وَالْجُبْنِ وَغَلَبَةِ الرِّجَال</div>
+                    <div class="hadith-translation"><strong>Artinya :</strong> “Sunan Nasa’I 5449: Telah mengabarkan kepada kami [Ali Ibnul Mundzir] dari [Ibnu Fudlail] ia berkata: telah menceritakan kepada kami [Muhammad bin Ishaq] dari [Al Minhal bin ‘Amru] dari [Anas bin Malik] ia berkata: “Rasulullah shallallahu ‘alaihi wa sallam mempunyai doa-doa yang tidak pernah lupa untuk membacanya, beliau selalu membaca: “ALLAHUMMA INNI A’UUDZU BIKA MINAL HAMMI WAL HAZNI WAL ‘AJZI WAL KASALI WA BUKHLI, WAL JUBNI WA GHALABATIR RIJAL (Ya Allah, aku berlindung kepada-Mu dari kegelisahan, kesedihan, kelemahan, kemalasan, kebakhilan, sifat pengecut dan penindasan para penguasa).”</div>
+                </div>
+            </div>
+
+            <!-- PAGE: RIBA -->
+            <div id="page-bab3_riba" class="book-page">
+                <h2 class="section-header">Perilaku Melanggar Syari'at dan Moral - Riba & Jual Beli Curang</h2>
+                <div class="hadith-block">
+                    <div class="hadith-arabic">سنن ابن ماجه ١٨: حَدَّثَنَا هِشَامُ بْنُ عَمَّارٍ حَدَّثَنَا يَحْيَى بْنُ حَمْزَةَ حَدَّثَنِي بُرْدُ بْنُ سِنَانٍ عَنْ إِسْحَقَ بْنِ قَبِيصَةَ عَنْ أَبِيهِ أَنَّ عُبَادَةَ بْنَ الصَّامِتِ الْأَنْصَارِيَّ النَّقِيبَ صَاحِبَ رَسُولِ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ غَزَا مَعَ مُعَاوِيَةَ أَرْضَ الرُّومِ فَنَظَرَ إِلَى النَّاسِ وَهُمْ يَتَبَايَعُونَ كِسَرَ الذَّهَبِ بِالدَّنَانِيرِ وَكِسَرَ الْفِضَّةِ بِالدَّرَاهِمِ فَقَالَ يَا أَيُّهَا النَّاسُ إِنَّكُمْ تَأْكُلُونَ الرِّبَا سَمِعْتُ رَسُولَ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ يَقُولُ لَا تَبْتَاعُوا الذَّهَبِ بِالذَّهَبِ إِلَّا مِثْلًا بِمِثْلٍ لَا زِيَادَةَ بَيْنَهُمَا وَلَا نَظِرَةً فَقَالَ لَهُ مُعَاوِيَةُ يَا أَبَا الْوَلِيدِ لَا أَرَى الرِّبَا فِي هَذَا إِلَّا مَا كَانَ مِنْ نَظِرَةٍ فَقَالَ عُبَادَةُ أُحَدِّثُكَ عَنْ رَسُولِ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ وَتُحَدِّثُنِي عَنْ رَأْيِكَ لَئِنْ أَخْرَجَنِي اللَّهُ لَا أُسَاكِنُكَ بِأَرْضٍ لَكَ عَلَيَّ فِيهَا إِمْرَةٌ فَلَمَّا قَفَلَ لَحِقَ بِالْمَدِينَةِ فَقَالَ لَهُ عُمَرُ بْنُ الْخَطَّابِ مَا أَقْدَمَكَ يَا أَبَا الْوَلِيدِ فَقَصَّ عَلَيْهِ الْقِصَّةَ وَمَا قَالَ مِنْ مُسَاكَنَتِهِ فَقَالَ ارْجِعْ يَا أَبَا الْوَلِيدِ إِلَى أَرْضِكَ فَقَبَحَ اللَّهُ أَرْضًا لَسْتَ فِيهَا وَأَمْثَالُكَ وَكَتَبَ إِلَى مُعَاوِيَةَ لَا إِمْرَةَ لَكَ عَلَيْهِ وَاحْمِلْ النَّاسَ عَلَى مَا قَالَ فَإِنَّهُ هُوَ الْأَمْر</div>
+                    <div class="hadith-translation"><strong>Artinya :</strong> “Sunan Ibnu Majah 18: Telah menceritakan kepada kami [Hisyam bin ‘Ammar] berkata: telah menceritakan kepada kami [Yahya bin Hamzah] berkata: telah menceritakan kepadaku [Burd bin Sinan] dari [Ishaq bin Qabishah] dari [Bapaknya] berkata: [Ubadah bin Shamit Al Anshari] adalah seorang komandan dan sahabat Rasulullah shallallahu ‘alaihi wa sallam yang ikut berperang riwayat Mu’awiyah di bumi Romawi. Dia memperhatikan orang-orang yang sedang melakukan jual beli pecahan emas dengan dinar dan pecahan perak dengan dirham. Kemudian ia berseru: “Hai manusia, sesungguhnya kalian telah memakan riba, aku telah mendengar Rasulullah shallallahu ‘alaihi wa sallam bersabda: “Janganlah kalian menjual emas dengan emas kecuali sebanding, tidak ada kelebihan dan tidak ada penangguhan antara keduanya.” Mu’awiyah berkata kepadanya: “Wahai Abul Walid saya tidak memandang riba dalam transaksi ini, kecuali dalam penangguhannya.” Ubadah menjawab: “Aku sampaikan kepadamu hadits dari Rasulullah shallallahu ‘alaihi wa sallam, namun engkau berpendapat dengan pandanganmu sendiri. Sungguh, sekiranya Allah mengeluarkanku, maka aku tidak akan tinggal di wilayah kekuasaanmu meski aku di bawah perintahmu.” Ketika riwayat ke Madinah ia bertemu Umar bin Khaththab, lalu Umar berkata kepadanya, “Hai Abul Walid, apa yang membuatmu datang ke sini?” Lalu ia ceritakan kisah tersebut kepada Umar, dan ia tidak bercerita tentang tempat tinggalnya. Umar pun berkata: “Hai Abul Walid, kembalilah ke negerimu. Sungguh, Allah akan membuat satu negeri menjadi hina tanpa keberadaanmu dan orang-orang sepertimu.” Kemudian Umar menulis surat untuk Mu’awiyah: “Engkau tidak berhak memerintahnya, dan ajaklah manusia mengikuti apa yang dikatakannya, karena dia di atas kebenaran.”</div>
+                </div>
+            </div>
+
+            <!-- PAGE: ZINA -->
+            <div id="page-bab3_zina" class="book-page">
+                <h2 class="section-header">Perilaku Melanggar Syari'at dan Moral - Perbuatan Zina & Homoseksualitas</h2>
+                <div class="hadith-block">
+                    <div class="hadith-arabic">(صحيح مسلم ١٦٩٠): و حَدَّثَنَا يَحْيَى بْنُ يَحْيَى التَّمِيمِيُّ أَخْبَرَنَا هُشَيْمٌ عَنْ مَنْصُورٍ عَنْ الْحَسَنِ عَنْ حِطَّانَ بْنِ عَبْدِ اللَّهِ الرَّقَاشِيِّ عَنْ عُبَادَةَ بْنَ الصَّامِتِ قَالَ قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ خُذُوا عَنِّي خُذُوا عَنِّي قَدْ جَعَلَ اللَّهُ لَهُنَّ سَبِيلًا الْبِكْرُ بِالْبِكْرِ جَلْدُ مِائَةٍ وَنَفْيُ سَنَةٍ وَالثَّيِّبُ بِالثَّيِّبِ جَلْدُ مِائَةٍ وَالرَّجْمُ</div>
+                    <div class="hadith-translation"><strong>Artinya :</strong> “Shahih Muslim 1690: Telah menceritakan kepada kami [Yahya bin Yahya At Tamimi] telah mengabarkan kepada kami [Husyaim] dari [Manshur] dari [Al Hasan] dari [Hitthan bin Abdullah Ar Raqasyi] dari [‘Ubadah bin Shamit] dia berkata: “Rasulullah shallallahu ‘alaihi wa sallam bersabda: “Ikutilah semua ajaranku, ikutilah semua ajaranku. Sungguh, Allah telah menetapkan hukuman bagi mereka (kaum wanita), perjaka dengan perawan hukumannya adalah cambuk seratus kali dan diasingkan selama setahun, sedangkan laki-laki dan wanita yang sudah menikah hukumannya adalah dera seratus kali dan dirajam.”</div>
+                </div>
+            </div>
+
+            <!-- PAGE: BERBOHONG -->
+            <div id="page-bab3_berbohong" class="book-page">
+                <h2 class="section-header">Perilaku Melanggar Syari'at dan Moral - Berbohong & Ingkar Janji</h2>
+                <div class="hadith-block">
+                    <div class="hadith-arabic">صحيح مسلم ١٠٦: حَدَّثَنَا أَبُو بَكْرِ بْنُ أَبِي شَيْبَةَ حَدَّثَنَا عَبْدُ اللَّهِ بْنُ نُمَيْرٍ ح و حَدَّثَنَا ابْنُ نُمَيْرٍ حَدَّثَنَا أَبِي حَدَّثَنَا الْأَعْمَشُ ح و حَدَّثَنِي زُهَيْرُ بْنُ حَرْبٍ حَدَّثَنَا وَكِيعٌ حَدَّثَنَا سُفْيَانُ عَنْ الْأَعْمَشِ عَنْ عَبْدِ اللَّهِ بْنِ مُرَّةَ عَنْ مَسْرُوقٍ عَنْ عَبْدِ اللَّهِ بْنِ عَمْرٍو قَالَ قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ أَرْبَعٌ مَنْ كُنَّ فِيهِ كَانَ مُنَافِقًا خَالِصًا وَمَنْ كَانَتْ فِيهِ خَلَّةٌ مِنْهُنَّ كَانَتْ فِيهِ خَلَّةٌ مِنْ نِفَاقٍ حَتَّى يَدَعَهَا إِذَا حَدَّثَ كَذَبَ وَإِذَا عَاهَدَ غَدَرَ وَإِذَا وَعَدَ أَخْلَفَ وَإِذَا خَاصَمَ فَجَرَ غَيْرَ أَنَّ فِي حَدِيثِ سُفْيَانَ وَإِنْ كَانَتْ فِيهِ خَصْلَةٌ مِنْهُنَّ كَانَتْ فِيهِ خَصْلَةٌ مِنْ النِّفَاق</div>
+                    <div class="hadith-translation"><strong>Artinya :</strong> “Shahih Muslim 106: Telah menceritakan kepada kami [Abu Bakar bin Abu Syaibah] telah menceritakan kepada kami [Abdullah bin Numair]. (dalam riwayat lain disebutkan) Dan telah menceritakan kepada kami [Ibnu Numair] telah menceritakan kepada kami [Bapakku] telah menceritakan kepada kami [al-A’masy]. (dalam riwayat lain disebutkan) Dan telah menceritakan kepada kami [Zuhair bin Harb] telah menceritakan kepada kami [Waki’] telah menceritakan kepada kami [Sufyan] dari [al-A’masy] dari [Abdullah bin Murrah] dari [Masruq] dari [Abdullah bin Amru] dia berkata: “Rasulullah shallallahu ‘alaihi wa sallam bersabda: “Ada empat perkara, barangsiapa yang empat perkara tersebut ada pada dirinya maka dia menjadi orang munafik sejati, dan apabila salah satu sifat dari empat perkara tersebut ada pada dirinya, maka pada dirinya terdapat satu sifat dari kemunafikan hingga dia meninggalkannya: jika berbicara selalu bohong, jika melakukan perjanjian melanggar, jika berjanji selalu ingkar, dan jika berselisih licik.” Hanya saja dalam hadits Sufyan, ‘Apabila dalam dirinya terdapat salah satu sifat tersebut maka dia memiliki salah satu sifat kemunafikan.”</div>
+                </div>
+            </div>
+
+            <!-- PAGE: KHIANAT -->
+            <div id="page-bab3_khianat" class="book-page">
+                <h2 class="section-header">Perilaku Melanggar Syari'at dan Moral - Khianat & Tidak Amanah</h2>
+                <div class="hadith-block">
+                    <div class="hadith-arabic">صحيح البخاري ٣٣ : حَدَّثَنَا سُلَيْمَانُ أَبُو الرَّبِيعِ قَالَ حَدَّثَنَا إِسْمَاعِيلُ بْنُ جَعْفَرٍ قَالَ حَدَّثَنَا نَافِعُ بْنُ مَالِكِ بْنِ أَبِي عَامِرٍ أَبُو سُهَيْلٍ عَنْ أَبِيهِ عَنْ أَبِي هُرَيْرَةَ عَنْ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ قَالَ آيَةُ الْمُنَافِقِ ثَلَاثٌ إِذَا حَدَّثَ كَذَبَ وَإِذَا وَعَدَ أَخْلَفَ وَإِذَا اؤْتُمِنَ خَان</div>
+                    <div class="hadith-translation"><strong>Artinya :</strong> “Shahih Bukhari 33: Telah menceritakan kepada kami [Sulaiman Abu ar Rabi’] berkata: telah menceritakan kepada kami [Isma’il bin Ja’far] berkata: telah menceritakan kepada kami [Nafi’ bin Malik bin Abu ‘Amir Abu Suhail] dari [bapaknya] dari [Abu Hurairah] dari Nabi shallallahu ‘alaihi wa sallam, beliau bersabda: “Tanda-tanda munafiq ada tiga: jika berbicara dusta, jika berjanji mengingkari dan jika diberi amanat dia khianat.”</div>
+                </div>
+            </div>
+
+            <!-- PAGE: SYIRIK -->
+            <div id="page-bab4_syirik" class="book-page">
+                <h2 class="section-header">Perilaku Menodai Iman dan Aqidah - Syirik & Kesyirikan</h2>
+                <div class="hadith-block">
+                    <div class="hadith-arabic">صحيح مسلم ١٤١: حَدَّثَنَا عُثْمَانُ بْنُ أَبِي شَيْبَةَ وَإِسْحَقُ بْنُ إِبْرَاهِيمَ قَالَ إِسْحَقُ أَخْبَرَنَا جَرِيرٌ وَقَالَ عُثْمَانُ حَدَّثَنَا جَرِيرٌ عَنْ مَنْصُورٍ عَنْ أَبِي وَائِلٍ عَنْ عَمْرِو بْنِ شُرَحْبِيلَ عَنْ عَبْدِ اللَّهِ قَالَ سَأَلْتُ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ أَيُّ الذَّنْبِ أَعْظَمُ عِنْدَ اللَّهِ قَالَ أَنْ تَجْعَلَ لِلَّهِ نِدًّا وَهُوَ خَلَقَكَ قَالَ قُلْتُ لَهُ إِنَّ ذَلِكَ لَعَظِيمٌ قَالَ قُلْتُ ثُمَّ أَيٌّ قَالَ ثُمَّ أَنْ تَقْتُلَ وَلَدَكَ مَخَافَةَ أَنْ تَجْعَلَ مَعَكَ قَالَ قُلْتُ ثُمَّ أَيٌّ قَالَ ثُمَّ أَنْ تُزَانِيَ حَلِيلَةَ جَارك</div>
+                    <div class="hadith-translation"><strong>Artinya :</strong> “Shahih Muslim 141: Telah menceritakan kepada kami [Utsman bin Abu Syaibah] dan [Ishaq bin Ibrahim] berkata [Ishaq]: Telah mengabarkan kepada kami [Jarir], dan [Utsman] berkata: telah menceritakan kepada kami [Jarir] dari [Manshur] dari [Abu Wail] dari [Amru bin Syurahbil] dari [Abdullah] dia berkata: “Aku bertanya Rasulullah shallallahu ‘alaihi wa sallam, “Dosa apakah yang paling besar di sisi Allah?” Rasulullah shallallahu ‘alaihi wa sallam menjawab: “Kamu membuat tandingan bagi Allah (syirik), sedangkan Dialah yang menciptakanmu.” Aku berkata: “Sesungguhnya dosa demikian memang besar. Kemudian apa lagi?” Beliau bersabda: “Kemudian kamu membunuh anakmu karena khawatir dia makan bersamamu.” Aku bertanya lagi, “Kemudian apa lagi?” Rasulullah shallallahu ‘alaihi wa sallam. Bersabda: “Kamu berzina dengan isteri tetanggamu.”</div>
+                </div>
+            </div>
+
+            <!-- PAGE: RIYA -->
+            <div id="page-bab4_riya" class="book-page">
+                <h2 class="section-header">Perilaku Menodai Iman dan Aqidah - Riya & Sum'ah</h2>
+                <div class="hadith-block">
+                    <div class="hadith-arabic">صحيح مسلم ١٥٥: و حَدَّثَنِي أَبُو بَكْرِ بْن... خَلَّادٍ الْبَاهِلِيُّ حَدَّثَنَا يَحْيَى وَهُوَ الْقَطَّANُ حَدَّثَنَا سُفْيَان... حَدَّثَنَا سُلَيْمَانُ الْأَعْمَشُ عَنْ سُلَيْمَانَ بْنِ مُسْهِرٍ عَنْ خَرَشَةَ بْنِ الْحُرِّ عَنْ أَبِي ذَرٍّ عَنْ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ قَالَ ثَلَاثَةٌ لَا يُكَلِّمُهُمْ اللَّهُ يَوْمَ الْقِيَامَةِ الْمَنَّانُ الَّذِي لَا يُعْطِي شَيْئًا إِلَّا مَنَّهُ وَالْمُنَفِّقُ سِلْعَتَهُ بِالْحَلِفِ الْفَاجِرِ وَالْمُسْبِلُ إِزَارَهُ</div>
+                    <div class="hadith-translation"><strong>Artinya :</strong> “Shahih Muslim 155: Dan telah menceritakan kepada kami [Abu Bakar bin Khallad al-Bahili] telah menceritakan kepada kami [Yahya] -yaitu al-Qaththan- telah menceritakan kepada kami [Sufyan] telah menceritakan kepada kami [Sulaiman al-A’masy] dari [Sulaiman bin Mushir] dari [Kharasyah bin al-Hurr] dari [Abu Dzar] dari Nabi shallallahu ‘alaihi wa sallam, beliau bersabda: “Ada tiga orang yang mana Allah tidak mengajak mereka bicara pada hari kiamat: Orang yang suka memberi, dia memberi melainkan dengan menyebut-nyebutkannya (karena riya’), orang yang membuat laku barang dagangannya dengan sumpah palsu, serta orang yang melakukan isbal (memanjangkan) pakaian.”</div>
+                </div>
+            </div>
+
+            <!-- PAGE: KUFUR -->
+            <div id="page-bab4_kufur" class="book-page">
+                <h2 class="section-header">Perilaku Menodai Iman dan Aqidah - Kufur Nikmat & Mengeluh</h2>
+                <div class="hadith-block">
+                    <div class="hadith-arabic">سنن الترمذي ٢٠٣٤: حَدَّثَنَا عَلِيُّ بْنُ حُجْرٍ أَخْبَرَنَا إِسْمَعِيل... بْنُ عَيَّاشٍ عَنْ عُمَارَةَ بْنِ غَزِيَّةَ عَنْ أَبِي الزُّبَيْرِ عَنْ جَابِرٍ عَنْ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ قَالَ مَنْ أُعْطِيَ عَطَاءً فَوَجَدَ فَلْيَجْزِ بِهِ وَمَنْ لَمْ يَجِدْ فَلْيُثْنِ فَإِنَّ مَنْ أَثْنَى فَقَدْ شَكَرَ وَمَنْ كَتَمَ فَقَدْ كَفَرَ وَمَنْ تَحَلَّى بِمَا لَمْ يُعْطَهُ كَانَ كَلَابِسِ ثَوْبَيْ زُورٍ قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ حَسَنٌ غَرِيبٌ وَفِي الْبَاب عَنْ أَسْمَاءَ بِنْتِ أَبِي بَكْرٍ وَعَائِشَةَ وَمَعْنَى قَوْلِهِ وَمَنْ كَتَمَ فَقَدْ كَفَرَ يَقُولُ قَدْ كَفَرَ تِلْكَ النِّعْمة</div>
+                    <div class="hadith-translation"><strong>Artinya :</strong> “Sunan Tirmidzi 2034: Telah menceritakan kepada kami [Ali bin Hujr], telah mengabarkan kepada kami [Isma’il bin ‘Ayysy] dari [Umarah bin Ghaziyyah] dari [Abu Zubair] dari [Jabir] dari Nabi Shallallahu ‘Alaihi wa Sallam, beliau bersabda: “Barangsiapa yang diberi suatu pemberian lalu dia memperoleh kelebihan harta, maka hendaknya dia memberi. Dan barang siapa yang tidak mendapatkan kelebihan harta hendaknya dia memuji, karena barang siapa yang memuji dia telah bersyukur dan barang siapa yang menyembunyikan nikmat berarti dia telah kufur nikmat. Dan barang siapa yang bersikap (mengaku) dengan sesuatu yang tidak diberikan kepadanya, maka dia ibarat orang yang memakai dua buah baju kebohongan.” Berkata Abu Isa: Ini merupakan hadits hasan gharib. Hadits semakna juga diriwayatkan dari Asma’ binti Abu Bakar dan ‘Aisyah.”</div>
+                </div>
+            </div>
+
+            <!-- PAGE: MURTAD -->
+            <div id="page-bab4_murtad" class="book-page">
+                <h2 class="section-header">Perilaku Menodai Iman dan Aqidah - Murtad & Keluar dari Islam</h2>
+                <div class="hadith-block">
+                    <div class="hadith-arabic">سنن الدارقطني ٤٧٦: حَدَّثَنَا عَلِيُّ بْنُ عَبْدِ اللَّهِ بْنِ مُبَشِّرٍ , نا عَبْدُ الْحَمِيدِ بْنُ بَيَانٍ , نا هُشَيْمٌ , عَنْ حُمَيْدٍ , وَعَبْدِ الْعَزِيز... بْنِ صُهَيْبٍ , عَنْ أَنَسِ بْنِ مَالِكٍ , أَنَّ نَاسًا مِنْ عُرَيْنَةَ قَدِمُوا عَلَى رَسُولِ اللَّهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ الْمَدِينَةَ فَاجْتَوَوْهَا , فَقَالَ لَهُمْ رَسُولُ اللَّهِ صَلَّى الله... عَلَيْهِ وَسَلَّم: «إِنْ شِئْتُمْ خَرَجْتُمْ إِلَى إِبِلِ الصَّدَقَةِ فَشَرِبْتُمْ مِنْ أَلْبَانِهَا وَأَبْوَالِهَا» , فَفَعَلُوا ذَلِكَ وَصَحُّوا فَأَقْبَلُوا عَلَى الرُّعَاةِ فَقَتَلُوهُمْ وَاسْتَاقُوا ذَوْدَ رَسُولِ اللَّهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ وَارْتَدُّوا عَنِ الْإِسْلَامِ , فَبَعَثَ رَسُولُ اللَّهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ فِي آثَارِهِمْ فَأُتِيَ بِهِمْ فَقَطَعَ أَيْدِيَهُمْ وَأَرْجُلَهُمْ وَسَمَلَ أَعْيُنَهُمْ وَتُرِكُوا بِالْحَرَّةِ حَتَّى مَاتُوا</div>
+                    <div class="hadith-translation"><strong>Artinya :</strong> “Sunan Daruquthni 476: Ali bin Abullah bin Mubasysyir menceritakan kepada kami, Abdul Hamid bn Bayan mengabarkan kepada kami, Husyaim mengabarkan kepada kami, dari Humaid dan Abdul aziz bn Suhaib, dari Anas bin Malik: Bahwa beberapa orang dari Urainah datang menghadap Rasulullah SAW (di) Madinah, lalu mereka merasa tidak betah (berada di Madinah), maka Rasulullah SAW bersabda, 'Jika mau, kalian dapat keluar menuju unta-unta zakat dan meminum susu serta air kencingnya.' Maka mereka pun melakukannya sehingga menjadi sehat kembali, lalu mereka menghampiri para penggembala(nya) lalu membunuh mereka kemudian mencuri unta-unta Rasulullah dan murtad dari Islam. Maka Rasulullah SAW mengirim (tentara) untuk mengejar mereka, lalu mereka pun ditangkap, kemudian kaki dan tangan mereka dipotong, dan mata mereka diangkat dengan besi panas (hingga buta), lalu dibiarkan di Harrah hingga meninggal.”</div>
+                </div>
+                
+                <!-- INTEGRASI DAFTAR PUSTAKA DAN TENTANG PENULIS -->
+                <h3 class="section-header">Daftar Pustaka</h3>
+                <ul style="padding-left: 20px; line-height: 1.9; color: #4a5568; font-size: 0.95rem;">
+                    <li>Abū ʻAbdillāh Muḥammad ibn Ismāʻīl ibn Ibrāhīm ibn al-Mugīrah al-Juʻfiy al-Bukhāriy, Al-Jāmiʻ al-Musnad al-Ṣaḥīḥ al-Mukhtaṣar min Umūr Rasūl Allāh Ṣallā Allāh ʻalaih wasallam wa Sunanih wa Ayyāmih, ed. Muḥammad Zuhair ibn Nāṣir al-Nāṣir, vol. 4 (Dār Ṭauq al-Najāt, 1422), p. 150</li>
+                    <li>Abū ʻAbd al-Raḥmān ibn Syuʻaib ibn ʻAliy al-Khurrāsāniy al-Nassā’iy, Al-Mujtabā Min Al-Sunan (Al-Sunan Al-Ṣugrā Li Al-Nassā’iy), ed. ʻAbd al-Fattāḥ Abū Guddah, vol. 6 (Aleppo: Maktab al-Maṭbūʻāt al-Islāmiyyah, 1986), p. 256</li>
+                    <li>Abū ʻĪsā Muḥammad ibn ʻĪsā ibn Saurah ibn Mūsā al-Ḍaḥḥak al-Tirmiżiy, Al-Jāmiʻ Al-Kabīr (Sunan Al-Tirmiżiy), ed. Basysyār ʻAwad Maʻrūf, vol. 3 (Beirut: Dār al-Garb al-Islāmiy, 1996), p. 439</li>
+                    <li>Abū ʻAbd Allāh Muḥammad ibn ʻAbd Allāh al-Ḥākim, Al-Mustadrak ʻalā Al-Ṣaḥīḥain, ed. Muṣṭafā ʻAbd al-Qādir ʻAṭā, vol. 1 (Dār al-Kutub al-ʻIlmiyyah, 1990), p. 78</li>
+                    <li>Aḥmad Ibn Ḥanbal, Musnad Al-Imām Aḥmad Ibn Ḥanbal, ed. Syuʻaib al-Arna’ūṭ and ʻĀdil Mursyid, vol. 1(Mu’assasah al-Risālah, 2001), p. 184</li>
+                    <li>Abū ʻĪsā Muḥammad ibn ʻĪsā ibn Saurah ibn Mūsā al-Ḍaḥḥak al-Tirmiżiy, Al-Jāmi` Al-Kabīr Wahuwa Sunan Al-Tirmiżiy, ed. Aḥmad Muḥammad Syākir, Muḥammad Fu’ād ʻAbd al-Baqī, and Ibrāĥīm ʻUṭwah ʻAuḍ, vol. 4 (Mesir: Muṣṭafā al-Bābī al-Ḥalabiy, 1975), p. 329</li>
+                    <li>Abū ʻAbd al-Raḥmān ibn Syuʻaib ibn ʻAliy al-Khurrāsāniy al-Nassā’iy, Al-Mujtabā Min Al-Sunan (Al-Sunan Al-Ṣugrā Li Al-Nassā’iy), ed. ʻAbd al-Fattāḥ Abū Guddah, vol. 8 (Aleppo: Maktab al-Maṭbūʻāt al-Islāmiyyah, 1986), p. 257</li>
+                    <li>Abū ʻAbdillāh Muḥammad ibn Yazīd Ibn Mājah, Sunan Ibn Mājah, ed. Muḥammad Fu’ād ʻAbd al-Bāqī, vol. 1 (Dār Iḥyā’ al-Kutub al-ʻArabiyyah, n.d.), p. 8</li>
+                    <li>Muslim Ibn al-Ḥajjāj, Al-Musnad Al-Ṣaḥīḥ Al-Mukhtaṣar Bi Naql Al-ʻAdl ʻan Al-ʻAdl Ilā Rasūl Allāh Ṣallā Allāh ʻalaih Wasallam, ed. Muḥammad ibn Rif‘at ibn ‘Uṡmān Ḥilmiy, Muḥammad ‘Izzat ibn ‘Uṡmān al-Za‘farān, and Abū Ni‘mah Allāh Muḥammad Syukriy, vol. 5 (Beirut: Dār Ṭauq al-Najāt, 1433), p. 115</li>
+                    <li>Muslim Ibn al-Ḥajjāj, Al-Musnad Al-Ṣaḥīḥ Al-Mukhtaṣar Bi Naql Al-ʻAdl ʻan Al-ʻAdl Ilā Rasūl Allāh Ṣallā Allāh ʻalaih Wasallam, ed. Muḥammad ibn Rif‘at ibn ‘Uṡmān Ḥilmiy, Muḥammad ‘Izzat ibn ‘Uṡmān al-Za‘farān, and Abū Ni‘mah Allāh Muḥammad Syukriy, vol. 1 (Beirut: Dār Ṭauq al-Najāt, 1433), p. 56</li>
+                    <li>Abū ʻAbdillāh Muḥammad ibn Ismāʻīl ibn Ibrāhīm ibn al-Mugīrah al-Juʻfiy al-Bukhāriy, Al-Jāmiʻ al-Musnad al-Ṣaḥīḥ al-Mukhtaṣar min Umūr Rasūl Allāh Ṣallā Allāh ʻalaih wasallam wa Sunanih wa Ayyāmih, ed. Muṣṭafā Daib al-Bagā, 5th ed., vol. 1 (Damaskus: Dār Ibn Kaṡīr, 1993), p. 21</li>
+                    <li>Muslim Ibn al-Ḥajjāj, Al-Musnad Al-Ṣaḥīḥ Al-Mukhtaṣar Bi Naql Al-ʻAdl ʻan Al-ʻAdl Ilā Rasūl Allāh Ṣallā Allāh ʻalaih Wasallam, ed. Muḥammad ibn Rif‘at ibn ‘Uṡmān Ḥilmiy, Muḥammad ‘Izzat ibn ‘Uṡmān al-Za‘farān, and Abū Ni‘mah Allāh Muḥammad Syukriy, vol. 1 (Beirut: Dār Ṭauq al-Najāt, 1433), p. 63</li>
+                    <li>Muslim Ibn al-Ḥajjāj, Al-Musnad Al-Ṣaḥīḥ Al-Mukhtaṣar Bi Naql Al-ʻAdl ʻan Al-ʻAdl Ilā Rasūl Allāh Ṣallā Allāh ʻalaih Wasallam, ed. Muḥammad ibn Rif‘at ibn ‘Uṡmān Ḥilmiy, Muḥammad ‘Izzat ibn ‘Uṡmān al-Za‘farān, and Abū Ni‘mah Allāh Muḥammad Syukriy, vol. 1 (Beirut: Dār Ṭauq al-Najāt, 1433), p. 71</li>
+                    <li>Abū ʻĪsā Muḥammad ibn ʻĪsā ibn Saurah ibn Mūsā al-Ḍaḥḥak al-Tirmiżiy, Al-Jāmi` Al-Kabīr Wahuwa Sunan Al-Tirmiżiy, ed. Aḥmad Muḥammad Syākir, Muḥammad Fu’ād ʻAbd al-Baqī, and Ibrāĥīm ʻUṭwah ʻAuḍ, vol. 4 (Mesir: Muṣṭafā al-Bābī al-Ḥalabiy, 1975), p. 379</li>
+                    <li>Abū Al-Ḥasan ʻAliy Ibn ʻUmar ibn Aḥmad ibn Mahdī ibn Masʻūd ibn al-Nuʻmān ibn Dīnār al-Bagdādiy al-Dāruquṭniy, Sunan Al-Dāruquṭniy, ed. Syuʻaib al-Arna’ūṭ, Ḥasan ʻAbd al-Munʻim Syalabiy, and ʻAbd al-Laṭīf Ḥaraz Allāh, vol. 1 (Beirut: Mu’assasah al-Risālah, 2004), p. 238</li>
+                </ul>
+
+                <h3 class="section-header">Tentang Penulis & Editor</h3>
+                <div class="profile-grid">
+                    <div class="profile-card">
+                        <h3>Profil Penulis</h3>
+                        <p><strong>Nama:</strong> Muhammad Yusron Kurniawan</p>
+                        <p><strong>Tanggal Lahir:</strong> 12 Agustus 2006</p>
+                        <p><strong>Jenis Kelamin:</strong> Laki-laki</p>
+                        <p><strong>Alamat:</strong> Walantaka, Kota Serang, Prov. Banten</p>
+                        <p><strong>Kontak:</strong> 0895323052048 / yusronkurniawan88@gmail.com</p>
+                        <p><strong>Pendidikan:</strong> MI Al-Khariyah Pipitan (2012), MTs Darul Qorin (2018), Ponpes Al-Rahman (2021)</p>
+                        <p><strong>Pengalaman:</strong> Pengurus OSMA</p>
+                        <p><strong>Hobi:</strong> Futsal, Gamers</p>
+                    </div>
+                    <div class="profile-card">
+                        <h3>Profil Editor</h3>
+                        <p><strong>Nama:</strong> Muhammad Fahry Dharmansyah</p>
+                        <p><strong>Profesi:</strong> Administrative Support Specialist</p>
+                        <p><strong>Alamat:</strong> Cibeber, Kota Cilegon, Provinsi Banten</p>
+                        <p><strong>Kontak:</strong> 0859202286 / muh.fahry.dh@gmail.com</p>
+                        <p><strong>Pendidikan:</strong> MA Nasruddin, MTs Nasruddin, SDN Kedalaman 1</p>
+                        <p><strong>Keahlian:</strong> SEO/SEM, Social Media Management, Content Strategy, Data Analysis</p>
+                        <p><strong>Pengalaman:</strong> PT Solusi Kreatif (Digital Strategist), Global Tech (Media Design & Marketing Process)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE: PREVIEW PDF REVIEW WEBSITE -->
+            <div id="page-pdf_viewer" class="book-page">
+                <h2 id="pdf-title" class="section-header">Review Website</h2>
+                <div id="pdf-frame-container"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // High-Performance Tab Switching Engine with Reset Trigger Animations
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.book-page');
+            
+            pages.forEach(page => {
+                page.classList.remove('active');
+                // Force layout reflow to restart animations cleanly
+                void page.offsetWidth; 
+            });
+            
+            const targetPage = document.getElementById('page-' + pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                
+                // Active menu state marking
+                document.querySelectorAll('nav li').forEach(li => li.classList.remove('active-menu'));
+                
+                // Smooth scroll to container view
+                document.querySelector('.main-content-area').scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            
+            if (window.innerWidth <= 992) {
+                document.getElementById('nav-menu').classList.remove('active');
+            }
+        }
+
+        function showPdf(driveId, partName) {
+            const container = document.getElementById('pdf-frame-container');
+            document.getElementById('pdf-title').innerText = "Review Website - " + partName;
+            container.innerHTML = `<iframe src="https://drive.google.com/file/d/${driveId}/preview" class="iframe-pdf"></iframe>`;
+            showPage('pdf_viewer');
+        }
+
+        // Hamburger Control Framework
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileToggle.addEventListener('click', (e) => {
+            navMenu.classList.toggle('active');
+            e.stopPropagation();
+        });
+
+        document.querySelectorAll('nav > ul > li > a').forEach(item => {
+            item.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992) {
+                    const parent = item.parentElement;
+                    if (parent.querySelector('.dropdown-content')) {
+                        e.preventDefault();
+                        parent.classList.toggle('active-mobile');
+                    }
+                }
+            });
+        });
+
+        document.querySelectorAll('.has-sub > a').forEach(subItem => {
+            subItem.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992) {
+                    const parent = subItem.parentElement;
+                    if (parent.querySelector('.sub-dropdown')) {
+                        e.preventDefault();
+                        parent.classList.toggle('active-sub');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
